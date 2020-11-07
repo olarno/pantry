@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,14 +45,14 @@ class SecurityController extends AbstractController
 
 
     /**
-     *@Route("/connexion", name="security_login")
+     *@Route("/login", name="security_login")
      */
     public function login(){
         return $this->render('security/login.html.twig');
     }
 
     /**
-     *@Route("/deconnexion", name="security_logout")
+     *@Route("/logout", name="security_logout")
      */
     public function logout(){
         
