@@ -1,5 +1,9 @@
 <nav class="header-nav-bar">
-    <img id="nav_bar_logo" src="{{ asset('img/pantry_logo.png') }}" class="rounded" alt="...">
+   <a href="{{ path ('home')}}"> <img id="nav_bar_logo" src="{{ asset('img/pantry_logo.png') }}" class="rounded" alt="..."></a>
+   {% if not app.user %}
     <a href="{{ path('security_login')}}" class="btn btn-login"  ><i class="fas fa-user"></i>Connexion</a>
+   {% else %}
+    <a href="{{ path('security_logout')}}" class="btn btn-login"  ><i class="fas fa-user"></i>Deconnexion</a>          
+   {% endif %}
 </nav>
 

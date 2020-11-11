@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+
+<div class="card-deck">
+    <div class="card-fridge card ">
+      <div class="card-body">
+        <h5 class="card-title">Réfrigérateur</h5>
+        <p class="card-text">Créez votre liste</p>
+        <a href="{{ path('dashboard_fridge_browse')}}" class="btn btn-login"  >Mon réfrigerateur</a>
+      </div>
+    </div>
+    <div class="card-pantry card">
+      <div class="card-body">
+        <h5 class="card-title">Garde manger</h5>
+        <p class="card-text">Créez votre liste</p>
+        <a href="{{ path('dashboard_pantry_browse')}}" class="btn btn-login"  >Mon garde manger</a>
+      </div>
+    </div>
+    <div class="card-shoplist card">
+      <div class="card-body">
+        <h5 class="card-title">Liste de courses</h5>
+        <p class="card-text">Créez votre liste</p>
+        <a href="{{ path('dashboard_shoplist_browse')}}" class="btn btn-login"  >Ma liste de courses</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

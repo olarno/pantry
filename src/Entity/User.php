@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert; 
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -59,6 +61,16 @@ class User implements UserInterface
      *@Assert\EqualTo(propertyPath="password")
      */
     public $confirm_password;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Containers::class, mappedBy="user")
+     */
+    private $containers;
+
+    public function __construct()
+    {
+        $this->containers = new ArrayCollection();
+    }
 
     /**
      * A visual identifier that represents this user.
@@ -119,6 +131,36 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection|Containers[]
+     */
+    public function getContainers(): Collection
+    {
+        return $this->containers;
+    }
+
+    public function addContainer(Containers $container): self
+    {
+        if (!$this->containers->contains($container)) {
+            $this->containers[] = $container;
+            $container->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContainer(Containers $container): self
+    {
+        if ($this->containers->removeElement($container)) {
+            // set the owning side to null (unless already changed)
+            if ($container->getUser() === $this) {
+                $container->setUser(null);
+            }
+        }
+
+        return $this;
     }
 
    

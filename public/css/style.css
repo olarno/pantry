@@ -1,4 +1,25 @@
 
+  :root {
+    --fridge: #927A49;
+    --pantry: #CB8D11;
+    --shoplist: #1FCEE6;
+    --primary : #f2f2f2;
+    --secondary : #f84444f1;
+  }
+  
+  /* Constant */
+
+  .fridge-bg-color {
+    background-color: var(--fridge);
+  } 
+  .pantry-bg-color {
+    background-color: var(--pantry);
+  } 
+  .shoplist-bg-color {
+    background-color: var(--shoplist);
+  } 
+
+
   #nav_bar_logo {
 
     height: 4em;
@@ -8,32 +29,32 @@
 
 
   .header-nav-bar {
-    border: 2px solid #f2f2f2;
+    border: 2px solid var(--primary);
     text-align: center;
   }
 
   .btn-login {
     float:right;
     margin: 1em;
-    border: 2px solid #f2f2f2;
+    border: 2px solid var(--primary);
     border-radius: 1em;
-    background-color: #f84444f1;
+    background-color: var(--secondary);
     font-family: system-ui;
-    color: #f2f2f2;
+    color:var(--primary) ;
   }
 
   .btn-login:hover {
     float:right;
     margin: 1em;
-    border: 2px solid #f2f2f2;
+    border: 2px solid var(--primary);
     border-radius: 1em;
-    background-color: #f84444f1;
+    background-color: var(--secondary);
     font-family: system-ui;
-    color: #f2f2f2;
+    color: var(--primary);
   }
 
   .fa-user {
-    color: #f2f2f2;
+    color: var(--primary);
     padding: 1px;
     margin-right: 2px;
   }
@@ -43,7 +64,17 @@
     padding: 2rem 0rem;
   }
   
-  
-  
-  
-  
+ 
+  /* desing dashboard */
+
+  .card-fridge {
+    background-color: var(--fridge);
+  }
+
+  .card-pantry {
+    background-color: var(--pantry);
+  }
+
+  .card-shoplist {
+    background-color: var(--shoplist);
+  }
