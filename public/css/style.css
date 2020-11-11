@@ -1,9 +1,4 @@
 
-  .starter {
-    padding: 3rem 1.5rem;
-    text-align: center;
-  }
-
   #nav_bar_logo {
 
     height: 4em;
@@ -12,5 +7,43 @@
   }
 
 
+  .header-nav-bar {
+    border: 2px solid #f2f2f2;
+    text-align: center;
+  }
 
+  .btn-login {
+    float:right;
+    margin: 1em;
+    border: 2px solid #f2f2f2;
+    border-radius: 1em;
+    background-color: #f84444f1;
+    font-family: system-ui;
+    color: #f2f2f2;
+  }
+
+  .btn-login:hover {
+    float:right;
+    margin: 1em;
+    border: 2px solid #f2f2f2;
+    border-radius: 1em;
+    background-color: #f84444f1;
+    font-family: system-ui;
+    color: #f2f2f2;
+  }
+
+  .fa-user {
+    color: #f2f2f2;
+    padding: 1px;
+    margin-right: 2px;
+  }
+  
+
+  .container {
+    padding: 2rem 0rem;
+  }
+  
+  
+  
+  
   
