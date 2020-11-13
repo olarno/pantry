@@ -68,13 +68,13 @@ class User implements UserInterface
     public $confirm_password;
 
     /**
-     * @ORM\OneToMany(targetEntity=Containers::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=Container::class, mappedBy="user")
      */
-    private $containers;
+    private $container;
 
     public function __construct()
     {
-        $this->containers = new ArrayCollection();
+        $this->container = new ArrayCollection();
     }
 
     /**
@@ -141,24 +141,24 @@ class User implements UserInterface
     /**
      * @return Collection|Containers[]
      */
-    public function getContainers(): Collection
+    public function getContainer(): Collection
     {
-        return $this->containers;
+        return $this->container;
     }
 
-    public function addContainer(Containers $container): self
+    public function addContainer(Container $container): self
     {
-        if (!$this->containers->contains($container)) {
-            $this->containers[] = $container;
+        if (!$this->container->contains($container)) {
+            $this->container[] = $container;
             $container->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeContainer(Containers $container): self
+    public function removeContainer(Container $container): self
     {
-        if ($this->containers->removeElement($container)) {
+        if ($this->container->removeElement($container)) {
             // set the owning side to null (unless already changed)
             if ($container->getUser() === $this) {
                 $container->setUser(null);

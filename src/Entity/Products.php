@@ -48,9 +48,9 @@ class Products
     private $quantity_type;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Containers::class, inversedBy="products")
+     * @ORM\ManyToOne(targetEntity=Container::class, inversedBy="products")
      */
-    private $containers;
+    private $container;
 
     public function __construct()
     {
@@ -135,12 +135,12 @@ class Products
         return $this;
     }
 
-    public function getContainers(): ?Containers
+    public function getContainer(): ?Container
     {
-        return $this->containers;
+        return $this->container;
     }
 
-    public function setContainers(?Containers $containers): self
+    public function setContainers(?Container $containers): self
     {
         $this->containers = $containers;
 

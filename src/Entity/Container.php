@@ -8,9 +8,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ContainersRepository::class)
+ * @ORM\Entity(repositoryClass=ContainerRepository::class)
  */
-class Containers
+class Container
 {
     /**
      * @ORM\Id
@@ -30,12 +30,12 @@ class Containers
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=Products::class, mappedBy="containers")
+     * @ORM\OneToMany(targetEntity=Products::class, mappedBy="container")
      */
     private $products;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="containers")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="container")
      */
     private $user;
 

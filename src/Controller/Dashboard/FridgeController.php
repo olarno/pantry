@@ -2,7 +2,7 @@
 
 namespace App\Controller\Dashboard;
 
-use App\Repository\ContainersRepository;
+use App\Repository\ContainerRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,7 +15,7 @@ class FridgeController extends AbstractController
     /**
      * @Route("/", name="browse", methods={"GET"})
      */
-    public function browse(ContainersRepository $containersRepository): Response
+    public function browse(ContainerRepository $containerRepository): Response
     {
         
 
@@ -23,9 +23,9 @@ class FridgeController extends AbstractController
 
         $user = $this->getUser();
 
-        $container = $containersRepository->findOneBy(array('type' => 'fridge'));
+        $container = $containerRepository->findOneBy(array('type' => 'fridge'));
 
-        $userContainer = $containersRepository->findOneBy(array('user' => $user));
+        $userContainer = $containerRepository->findOneBy(array('user' => $user));
 
 
         if ($userContainer){
