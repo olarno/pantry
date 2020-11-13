@@ -23,7 +23,7 @@ class FridgeController extends AbstractController
 
         $user = $this->getUser();
 
-        $container = $containersRepository->findOneBy(array('id' => 1));
+        $container = $containersRepository->findOneBy(array('type' => 'fridge'));
 
         $userContainer = $containersRepository->findOneBy(array('user' => $user));
 

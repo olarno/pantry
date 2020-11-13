@@ -3,10 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Containers;
 use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class SecurityController extends AbstractController
 {
     /** 
-    *@Route("/inscription", name="security_registration")
+    *@Route("/registration", name="security_registration")
     */ 
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder){
 
@@ -26,11 +26,38 @@ class SecurityController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+
+            
             $hash = $encoder->encodePassword($user, $user->getPassword());
 
             $user->setPassword($hash);
 
             $manager->persist($user);
+
+            $containerFridge = new Containers();
+            $containerFridge->setName('Mon frigo');
+            $containerFridge->setType('fridge');
+            $containerFridge->setUser($user->getId());
+
+            $manager->persist($containerFridge);
+
+
+            $containerShoplist = new Containers();
+            $containerShoplist->setName('Ma liste de courses');
+            $containerShoplist->setType('shoplist');
+            $containerShoplist->setUser($user->getId());
+
+            $manager->persist($containerShoplist);
+
+            $containerPantry = new Containers();
+            $containerPantry->setName('Mon garde manger');
+            $containerPantry->setType('pantry');
+            $containerPantry->setUser($user->getId());
+
+            $manager->persist($containerPantry);
+
+
+
             $manager->flush();
 
             return $this->redirectToRoute('security_login');

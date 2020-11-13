@@ -23,7 +23,7 @@ class PantryController extends AbstractController
 
         $user = $this->getUser();
 
-        $container = $containersRepository->findOneBy(array('id' => 1));
+        $container = $containersRepository->findOneBy(array('type' => 'pantry'));
 
         $userContainer = $containersRepository->findOneBy(array('user' => $user));
 
