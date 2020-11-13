@@ -33,6 +33,10 @@ class ProductController extends AbstractController
 
             $product = $form->getData();
 
+          
+
+            $product->setUser($this->getUser());
+
 
             $manager->persist($product);
 

@@ -53,6 +53,11 @@ class Product
      */
     private $quantityType;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="products")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime();
@@ -145,6 +150,18 @@ class Product
     public function setQuantityType(?QuantityType $quantityType): self
     {
         $this->quantityType = $quantityType;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Dashboard;
 
+use App\Repository\ProductRepository;
 use App\Repository\ContainerRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,7 +16,7 @@ class FridgeController extends AbstractController
     /**
      * @Route("/", name="browse", methods={"GET"})
      */
-    public function browse(ContainerRepository $containerRepository): Response
+    public function browse(ContainerRepository $containerRepository, ProductRepository $productRepository): Response
     {
         
 
@@ -25,14 +26,13 @@ class FridgeController extends AbstractController
 
         $container = $containerRepository->findOneBy(array('type' => 'fridge'));
         
-        $userContainer = $containerRepository->findOneBy(array('user' => $user));
-
-
-        if ($userContainer){
-            $products_list = $userContainer->getProduct();
-        } else {
-            $products_list = array(); 
-        }
+        $productList = $productRepository->findByUserAndContainer($user, $container);
+        // if ($userContainer){
+        //     $products_list = $userContainer->getProduct();
+        // } else {
+        //     $products_list = array(); 
+        // }
+        
         
         
 
@@ -40,8 +40,7 @@ class FridgeController extends AbstractController
         return $this->render('dashboard/fridge/index.html.twig', [
             'controller_name' => 'FridgeController',
             'container'=> $container,
-            'userContainer' => $userContainer,
-            'products_list' => $products_list
+            'products_list' => $productList
         ]);
     }
 
