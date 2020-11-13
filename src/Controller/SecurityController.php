@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Entity\Containers;
+use App\Entity\Container;
 use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,7 +34,7 @@ class SecurityController extends AbstractController
 
             $manager->persist($user);
 
-            $containerFridge = new Containers();
+            $containerFridge = new Container();
             $containerFridge->setName('Mon frigo');
             $containerFridge->setType('fridge');
             $containerFridge->setUser($user->getId());
@@ -42,14 +42,14 @@ class SecurityController extends AbstractController
             $manager->persist($containerFridge);
 
 
-            $containerShoplist = new Containers();
+            $containerShoplist = new Container();
             $containerShoplist->setName('Ma liste de courses');
             $containerShoplist->setType('shoplist');
             $containerShoplist->setUser($user->getId());
 
             $manager->persist($containerShoplist);
 
-            $containerPantry = new Containers();
+            $containerPantry = new Container();
             $containerPantry->setName('Mon garde manger');
             $containerPantry->setType('pantry');
             $containerPantry->setUser($user->getId());

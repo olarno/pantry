@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Containers;
+use App\Entity\Container;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Containers|null find($id, $lockMode = null, $lockVersion = null)
- * @method Containers|null findOneBy(array $criteria, array $orderBy = null)
- * @method Containers[]    findAll()
- * @method Containers[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Container|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Container|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Container[]    findAll()
+ * @method Container[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ContainersRepository extends ServiceEntityRepository
+class ContainerRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Containers::class);
+        parent::__construct($registry, Container::class);
     }
 
     // /**
-    //  * @return Containers[] Returns an array of Containers objects
+    //  * @return Container[] Returns an array of Container objects
     //  */
     /*
     public function findByExampleField($value)

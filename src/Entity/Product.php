@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ProductsRepository;
+use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ProductsRepository::class)
+ * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
-class Products
+class Product
 {
     /**
      * @ORM\Id
@@ -42,15 +42,21 @@ class Products
      */
     private $updatedAt;
 
+    
     /**
-     * @ORM\OneToOne(targetEntity=QuantityType::class, cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Container::class, inversedBy="product")
      */
-    private $quantity_type;
+    private $container;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Containers::class, inversedBy="products")
+     * @ORM\ManyToOne(targetEntity=QuantityType::class, inversedBy="products")
      */
-    private $containers;
+    private $quantityType;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="products")
+     */
+    private $user;
 
     public function __construct()
     {
@@ -123,26 +129,39 @@ class Products
         return $this;
     }
 
-    public function getQuantityType(): ?QuantityType
+
+    public function getContainer(): ?Container
     {
-        return $this->quantity_type;
+        return $this->container;
     }
 
-    public function setQuantityType(?QuantityType $quantity_type): self
+    public function setContainer(?Container $container): self
     {
-        $this->quantity_type = $quantity_type;
+        $this->container = $container;
 
         return $this;
     }
 
-    public function getContainers(): ?Containers
+    public function getQuantityType(): ?QuantityType
     {
-        return $this->containers;
+        return $this->quantityType;
     }
 
-    public function setContainers(?Containers $containers): self
+    public function setQuantityType(?QuantityType $quantityType): self
     {
-        $this->containers = $containers;
+        $this->quantityType = $quantityType;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

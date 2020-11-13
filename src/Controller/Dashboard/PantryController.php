@@ -2,10 +2,11 @@
 
 namespace App\Controller\Dashboard;
 
-use App\Repository\ContainersRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ProductRepository;
+use App\Repository\ContainerRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     /**
      * @Route("/dashboard/pantry", name="dashboard_pantry_")
      */
@@ -15,7 +16,7 @@ class PantryController extends AbstractController
     /**
      * @Route("/", name="browse", methods={"GET"})
      */
-    public function browse(ContainersRepository $containersRepository): Response
+    public function browse(ContainerRepository $containerRepository, ProductRepository $productRepository): Response
     {
         
 
@@ -23,24 +24,21 @@ class PantryController extends AbstractController
 
         $user = $this->getUser();
 
-        $container = $containersRepository->findOneBy(array('type' => 'pantry'));
-
-        $userContainer = $containersRepository->findOneBy(array('user' => $user));
-
-
-        if ($userContainer){
-            $products_list = $userContainer->getProducts();
-        } else {
-            $products_list = array(); 
-        }
+        $container = $containerRepository->findOneBy(array('type' => 'pantry'));
+        
+        $productList = $productRepository->findByUserAndContainer($user, $container);
+        // if ($userContainer){
+        //     $products_list = $userContainer->getProduct();
+        // } else {
+        //     $products_list = array(); 
+        // }
         
         
 
 
         return $this->render('dashboard/pantry/index.html.twig', [
             'container'=> $container,
-            'userContainer' => $userContainer,
-            'products_list' => $products_list
+            'products_list' => $productList
         ]);
     }
 
