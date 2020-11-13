@@ -23,14 +23,14 @@ class ShoplistController extends AbstractController
         
 
         $user = $this->getUser();
-
+        dump($user);
         $container = $containerRepository->findOneBy(array('type' => 'shoplist'));
-
-        $userContainer = $containerRepository->findOneBy(array('user' => $user));
-
+        dump($container);
+        $userContainer = $containerRepository->find(array('user' => $user));
+        dump($userContainer);
 
         if ($userContainer){
-            $products_list = $userContainer->getProducts();
+            $products_list = $userContainer->getProduct();
         } else {
             $products_list = array(); 
         }

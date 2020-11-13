@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ProductsRepository;
+use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ProductsRepository::class)
+ * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
-class Products
+class Product
 {
     /**
      * @ORM\Id
@@ -42,15 +42,16 @@ class Products
      */
     private $updatedAt;
 
+    
     /**
-     * @ORM\OneToOne(targetEntity=QuantityType::class, cascade={"persist", "remove"})
-     */
-    private $quantity_type;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Container::class, inversedBy="products")
+     * @ORM\ManyToOne(targetEntity=Container::class, inversedBy="product")
      */
     private $container;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=QuantityType::class, inversedBy="products")
+     */
+    private $quantityType;
 
     public function __construct()
     {
@@ -123,26 +124,27 @@ class Products
         return $this;
     }
 
-    public function getQuantityType(): ?QuantityType
-    {
-        return $this->quantity_type;
-    }
-
-    public function setQuantityType(?QuantityType $quantity_type): self
-    {
-        $this->quantity_type = $quantity_type;
-
-        return $this;
-    }
 
     public function getContainer(): ?Container
     {
         return $this->container;
     }
 
-    public function setContainers(?Container $containers): self
+    public function setContainer(?Container $container): self
     {
-        $this->containers = $containers;
+        $this->container = $container;
+
+        return $this;
+    }
+
+    public function getQuantityType(): ?QuantityType
+    {
+        return $this->quantityType;
+    }
+
+    public function setQuantityType(?QuantityType $quantityType): self
+    {
+        $this->quantityType = $quantityType;
 
         return $this;
     }

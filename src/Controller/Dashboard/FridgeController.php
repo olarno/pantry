@@ -8,8 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
-     * @Route("/dashboard/fridge", name="dashboard_fridge_")
-     */
+* @Route("/dashboard/fridge", name="dashboard_fridge_")
+*/
 class FridgeController extends AbstractController
 {
     /**
@@ -24,12 +24,12 @@ class FridgeController extends AbstractController
         $user = $this->getUser();
 
         $container = $containerRepository->findOneBy(array('type' => 'fridge'));
-
+        
         $userContainer = $containerRepository->findOneBy(array('user' => $user));
 
 
         if ($userContainer){
-            $products_list = $userContainer->getProducts();
+            $products_list = $userContainer->getProduct();
         } else {
             $products_list = array(); 
         }

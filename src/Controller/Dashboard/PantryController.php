@@ -24,12 +24,12 @@ class PantryController extends AbstractController
         $user = $this->getUser();
 
         $container = $containerRepository->findOneBy(array('type' => 'pantry'));
-
+        
         $userContainer = $containerRepository->findOneBy(array('user' => $user));
 
 
         if ($userContainer){
-            $products_list = $userContainer->getProducts();
+            $products_list = $userContainer->getProduct();
         } else {
             $products_list = array(); 
         }
