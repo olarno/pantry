@@ -17,14 +17,8 @@ class ProductType extends AbstractType
             ->add('name')
             ->add('quantity')
             ->add('expiration_date')
-            ->add('createdAt')
             ->add('quantityType')
             ->add('container')
-            // ->add('container', EntityType::class,[
-            //     'class' => Container::class,
-            //     'choice_label' => 'name',
-            //     'label' => 'Ma categorie:'
-            // ])
         ;
     }
 

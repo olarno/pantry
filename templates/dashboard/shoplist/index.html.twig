@@ -8,7 +8,7 @@
 {{container.name}}
 
 {% if products_list is empty %}
-    <a href=""> Créer votre première liste</a>
+    <a href="{{ path('dashboard_product_add')}}"> Créer votre première liste</a>
 {% else %}
     {% for product in products_list %}
     <div class="d-flex flex-row shoplist-bg-color justify-content-around ">
@@ -26,7 +26,10 @@
         </div>
         
     </div>
+    
+
     {% endfor %}
+    <a href="{{ path('dashboard_product_add') }}">Ajouter un produit</a>
 {% endif %}
 
 
