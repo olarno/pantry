@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
-* @Route("/dashboard/product", name="dashboard_product")
+* @Route("/dashboard/product", name="dashboard_product_")
 */
 class ProductController extends AbstractController
 {
@@ -53,4 +53,42 @@ class ProductController extends AbstractController
 
     }
 
+
+
+     /**
+     * @Route("/edit/{id}", name="edit", requirements={"id": "\d+"})
+     *
+     */
+    public function edit(Product $product, Request $request,  EntityManagerInterface $manager)
+    {
+
+
+        $form = $this->createForm(ProductType::class, $product);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $product = $form->getData();
+
+
+            $manager->persist($product);
+
+
+            $manager->flush();
+
+
+
+            return $this->redirectToRoute('dashboard_fridge_browse');
+
+        };
+
+
+        return $this->render('dashboard/product/index.html.twig', [
+            'controller_name' => 'ProductController',
+            'form' => $form->CreateView()
+        ]);
+
+    }
 }
