@@ -9,14 +9,14 @@
     </head>
     <body>
     {% block nav %}
-		<div id="navbarIndex"></div>
+		{% include'layout/navbar.html.twig' %}
 	{% endblock %}
     
     {% block body %}
         
        
     {% endblock %}
-         <div id="footer"></div>
+         {% include'layout/footer.html.twig' %}
     {% block javascripts %}
             <script src="{{ asset('build/app.js') }}"></script>
     {% endblock %}
