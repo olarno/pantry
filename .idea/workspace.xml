@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76de1d24-fdaf-4854-957d-ccfa8d33c57a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/components/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/components/button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_layout/header_navbar.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pantry/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantry/index.html.twig" afterDir="false" />
     </list>
@@ -134,7 +133,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kHBiVt6cYh1id0FEWLVi43roQE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -142,12 +143,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kaza" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/js" />
     </key>
@@ -164,6 +168,9 @@
       <workItem from="1605432739887" duration="623000" />
       <workItem from="1605479236059" duration="1000" />
       <workItem from="1605512129488" duration="25000" />
+      <workItem from="1605522689849" duration="6689000" />
+      <workItem from="1605532631921" duration="1000" />
+      <workItem from="1605533192232" duration="1486000" />
     </task>
     <servers />
   </component>
@@ -171,29 +178,37 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="693" y="275" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605532239557">
+      <screen x="0" y="27" width="1920" height="999" />
+    </state>
+    <state x="693" y="275" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605532239557" />
     <state x="743" y="284" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605512152450">
       <screen x="0" y="27" width="1920" height="999" />
     </state>
     <state x="743" y="284" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605512152450" />
-    <state width="1874" height="258" key="GridCell.Tab.0.bottom" timestamp="1605386136058">
+    <state width="1874" height="258" key="GridCell.Tab.0.bottom" timestamp="1605532482609">
       <screen x="0" y="27" width="1920" height="999" />
     </state>
-    <state width="1874" height="258" key="GridCell.Tab.0.bottom/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605386136058" />
-    <state width="1874" height="258" key="GridCell.Tab.0.center" timestamp="1605386136058">
+    <state width="1874" height="258" key="GridCell.Tab.0.bottom/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605532482609" />
+    <state width="1874" height="258" key="GridCell.Tab.0.center" timestamp="1605532482609">
       <screen x="0" y="27" width="1920" height="999" />
     </state>
-    <state width="1874" height="258" key="GridCell.Tab.0.center/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605386136058" />
-    <state width="1874" height="258" key="GridCell.Tab.0.left" timestamp="1605386136058">
+    <state width="1874" height="258" key="GridCell.Tab.0.center/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605532482609" />
+    <state width="1874" height="258" key="GridCell.Tab.0.left" timestamp="1605532482609">
       <screen x="0" y="27" width="1920" height="999" />
     </state>
-    <state width="1874" height="258" key="GridCell.Tab.0.left/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605386136058" />
-    <state width="1874" height="258" key="GridCell.Tab.0.right" timestamp="1605386136058">
+    <state width="1874" height="258" key="GridCell.Tab.0.left/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605532482609" />
+    <state width="1874" height="258" key="GridCell.Tab.0.right" timestamp="1605532482609">
       <screen x="0" y="27" width="1920" height="999" />
     </state>
-    <state width="1874" height="258" key="GridCell.Tab.0.right/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605386136058" />
+    <state width="1874" height="258" key="GridCell.Tab.0.right/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605532482609" />
     <state x="449" y="161" width="1022" height="737" key="SettingsEditor" timestamp="1605432769173">
       <screen x="0" y="27" width="1920" height="999" />
     </state>
     <state x="449" y="161" width="1022" height="737" key="SettingsEditor/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605432769173" />
+    <state x="570" y="140" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605527453999">
+      <screen x="0" y="27" width="1920" height="999" />
+    </state>
+    <state x="570" y="140" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.999/1920.0.1920.1080@0.27.1920.999" timestamp="1605527453999" />
   </component>
 </project>

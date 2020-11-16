@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "autoprefixer": "^9.0.0",
-        "postcss": "^8.1.7"
+        "postcss": "^8.1.7",
+        "vue-router": "^3.4.9"
     }
 }
