@@ -22,7 +22,7 @@
 		name: "qr",
 		props:[
 			"question",
-			"answer",
+			"answer"
 		],
 		data() {
 			

@@ -3,10 +3,11 @@
 {% block title %}Hello FaqController!{% endblock %}
 
 {% block body %}
-  
 
-   
-<div id="faq" data-pseudo="{{ app.user.email  }}"></div>
+ 
+
+
+<div id="faq" data-pseudo="{{ app.user.email  }}" data-questiontest="{{ faq.question  }}" data-questionarray="{{ faqarray }}"></div>
     
   
 {% endblock %}
