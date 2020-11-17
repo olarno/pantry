@@ -12,7 +12,7 @@
 		</div>
 		<div class="p-3" v-show="active">
 			<p class="mb-3 text-gray-600">{{answer}}</p>
-
+			
 		</div>
 	</div>
 </template>
@@ -22,12 +22,13 @@
 		name: "qr",
 		props:[
 			"question",
-			"answer"
+			"answer",
 		],
 		data() {
+			
 			return {
 				active: false,
-
+				
 			}
 		},
 	}
