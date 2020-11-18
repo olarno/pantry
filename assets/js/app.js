@@ -8,12 +8,11 @@ import Faq from './components/faq/Faq.vue';
   new Vue ({
 	  el:'#faq',
 	  render(h) {
+				console.log(this.$el.getAttribute('data-questions'))
 		  return h(Faq, {
 			  props: {
-				pseudo: this.$el.getAttribute('data-pseudo'),
-				questiontest: this.$el.getAttribute('data-questiontest'),
-				questionarray: this.$el.getAttribute('data-questionarray'),
-			  }
+			  		questions: this.$el.getAttribute('data-questions'),
+				}
 		  })
 
 	  },

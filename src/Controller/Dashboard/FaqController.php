@@ -8,6 +8,7 @@ use App\Repository\ContainerRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Serializer\SerializerInterface;
 
 
 /**
@@ -17,19 +18,21 @@ class FaqController extends AbstractController
 {
     /**
      * @Route("/", name="index")
+     * @param FaqRepository $faqRepository
+     * @param SerializerInterface $serializer
+     * @return Response
      */
-    public function index(FaqRepository $faqRepository): Response
+    public function index(FaqRepository $faqRepository , SerializerInterface $serializer): Response
     {
           
 
-       $faq = $faqRepository->findOneBy(array('id' => 1));
-
-       $faqarray = $faqRepository->findAll();
+       $faq = $faqRepository->findAll();
+        $faq = $serializer->serialize($faq , 'json');
 
         return $this->render('dashboard/faq/index.html.twig', [
             'controller_name' => 'FaqController',
-            'faq' => $faq,
-            'faqarray' => json_encode($faqarray)
+            'questions' => $faq,
+
         ]);
     }
 }

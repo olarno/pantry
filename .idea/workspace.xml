@@ -4,12 +4,9 @@
     <list default="true" id="76de1d24-fdaf-4854-957d-ccfa8d33c57a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_layout/header_navbar.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pantry/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantry/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/faq/Faq.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/faq/Faq.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Dashboard/FaqController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Dashboard/FaqController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/faq/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/faq/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +140,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -171,6 +168,7 @@
       <workItem from="1605522689849" duration="6689000" />
       <workItem from="1605532631921" duration="1000" />
       <workItem from="1605533192232" duration="1486000" />
+      <workItem from="1605627884545" duration="8572000" />
     </task>
     <servers />
   </component>
