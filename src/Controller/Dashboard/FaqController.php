@@ -11,13 +11,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Serializer\SerializerInterface;
 
 
-/**
-* @Route("/dashboard/faq", name="dashboard_faq_")
-*/
+
 class FaqController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/faq", name="faq")
      * @param FaqRepository $faqRepository
      * @param SerializerInterface $serializer
      * @return Response
@@ -31,7 +29,7 @@ class FaqController extends AbstractController
 
         return $this->render('dashboard/faq/index.html.twig', [
             'controller_name' => 'FaqController',
-            'questions' => $faq,
+            'faqData' => $faq,
 
         ]);
     }
