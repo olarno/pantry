@@ -1,12 +1,10 @@
-
 import '../styles/tailwind.css';
 
 import Vue from 'vue';
 import Faq from './components/faq/Faq.vue';
-import Qr from  './components/faq/Qr.vue';
+import ButtonLogin from './components/login/ButtonLogin.vue';
 
-
-  new Vue ({
+	new Vue ({
 	  el:'#faq',
 	  render(h) {
 			return h(Faq, {
@@ -17,7 +15,17 @@ import Qr from  './components/faq/Qr.vue';
 		  })
 
 	  },
-  })
+  }),
+			new Vue ({
+					el:'#ButtonLogin',
+					render(h) {
+							return h(ButtonLogin, {
+									props: {
 
+									},
 
+							})
+
+					},
+			})
  
