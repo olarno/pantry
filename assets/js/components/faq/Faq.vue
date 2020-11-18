@@ -1,27 +1,20 @@
 <template>
 	<div>
-		<div class="p-6 mx-auto bg-white">
+    <div class="p-6 mx-auto bg-white" v-for="data in faqData" :key="data.question">
+			<qr :dataQr = "data.question" :answer= "data.answer">  </qr>
+    </div>
 
-			<qr question= "combien de temps prends la livraison?" answer="lololo"> </qr>
-			<qr question= "combien de temps prends la livraison?" answer="lololo"> </qr>
-			<qr question= "combien de temps prends la livraison?" answer="lololo"> </qr>
-			<p> ici  faq {{ pseudo }}</p>
-
-
-		</div>
 	</div>
+		
 </template>
 
 <script>
-	
 	import Qr from "./Qr";
-
-	export default {
-		components: {
-			Qr,
+export default {
+    props: ['faqData'],
+    components: {
+			Qr
 		},
-		props:['pseudo']
-
 }
 </script>
 <style>
