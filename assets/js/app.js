@@ -11,7 +11,7 @@ import Faq from './components/faq/Faq.vue';
 				console.log(this.$el.getAttribute('data-questions'))
 		  return h(Faq, {
 			  props: {
-			  		questions: this.$el.getAttribute('data-questions'),
+			  		questions: JSON.parse(this.$el.getAttribute('data-questions')),
 				}
 		  })
 
