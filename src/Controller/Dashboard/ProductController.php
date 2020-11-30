@@ -16,9 +16,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 */
 class ProductController extends AbstractController
 {
-   
-     /**
+
+    /**
      * @Route("/add", name="add", methods={"GET","POST"})
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
      */
     public function add(Request $request, EntityManagerInterface $manager)
     {   

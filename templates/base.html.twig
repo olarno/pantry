@@ -3,24 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/style.css')}}">
         <link rel="stylesheet" href="{{ asset('build/app.css') }}">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
     </head>
     <body>
-    {% block nav %}
-		{% include'layout/navbar.html.twig' %}
-	{% endblock %}
-    
-    {% block body %}
-        
-       
-    {% endblock %}
-         {% include'layout/footer.html.twig' %}
+
+    <div id="app" data-vue-routing="{{ vueRouting }}" data-query-parameters="{{ queryParameters }}"></div>
+
     {% block javascripts %}
             <script src="{{ asset('build/app.js') }}"></script>
     {% endblock %}
-    
+
     </body>
      <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>

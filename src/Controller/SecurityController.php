@@ -6,7 +6,9 @@ use App\Entity\User;
 use App\Entity\Container;
 use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -14,9 +16,13 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class SecurityController extends AbstractController
 {
-    /** 
-    *@Route("/registration", name="security_registration")
-    */ 
+    /**
+     * @Route("/registration", name="security_registration")
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @return RedirectResponse|Response
+     */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder){
 
         $user = new User();
@@ -73,16 +79,24 @@ class SecurityController extends AbstractController
 
 
     /**
-     *@Route("/login", name="security_login")
+     * @Route("/login", name="security_login", methods={"POST"})
+     * @param AuthenticationUtils $authUtils
+     * @return Response
      */
-    public function login(AuthenticationUtils $authenticationUtils){
-     
-           // get the login error if there is one
-           $error = $authenticationUtils->getLastAuthenticationError();
+    public function login(AuthenticationUtils $authUtils)
+    {
+        $error = $authUtils->getLastAuthenticationError();
 
-        return $this->render('security/login.html.twig',[
-            'error' => $error,
-        ]);
+        return $this->json([
+            'error'         => $error,
+        ],
+            200,
+            [],
+            [
+                'groups' => ['login'],
+            ]
+        );
+
     }
 
     /**
@@ -91,4 +105,5 @@ class SecurityController extends AbstractController
     public function logout(){
         
     }
+
 }

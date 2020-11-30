@@ -2,7 +2,8 @@ import '../styles/tailwind.css';
 
 import Vue from 'vue';
 import Faq from './components/faq/Faq.vue';
-import ButtonLogin from './components/login/ButtonLogin.vue';
+import Login from './components/login/ButtonLogin.vue';
+global.axios = require('axios');
 
 	new Vue ({
 	  el:'#faq',
@@ -17,9 +18,9 @@ import ButtonLogin from './components/login/ButtonLogin.vue';
 	  },
   }),
 			new Vue ({
-					el:'#ButtonLogin',
+					el:'#Login',
 					render(h) {
-							return h(ButtonLogin, {
+							return h(Login, {
 									props: {
 
 									},

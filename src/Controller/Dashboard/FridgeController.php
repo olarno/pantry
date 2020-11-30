@@ -15,13 +15,13 @@ class FridgeController extends AbstractController
 {
     /**
      * @Route("/", name="browse", methods={"GET"})
+     * @param ContainerRepository $containerRepository
+     * @param ProductRepository $productRepository
+     * @return Response
      */
     public function browse(ContainerRepository $containerRepository, ProductRepository $productRepository): Response
     {
         
-
-        
-
         $user = $this->getUser();
 
         $container = $containerRepository->findOneBy(array('type' => 'fridge'));
